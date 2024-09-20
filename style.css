@@ -1,0 +1,542 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+header {
+  background-color: #ede0c7;
+  color: #4b3f2f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Áudio */
+
+#small-audio-player {
+  width: 120px; 
+  height: 30px;
+  border: none; 
+  outline: none; /
+}
+
+audio::-webkit-media-controls-panel {
+  width: 120px !important; /* A tag !importante sobrescreve todas as regras de estilo anteriores. No caso eu sobrescrevo as padrão do Chrome*/
+  height: 30px !important; 
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-volume-slider {
+  display: none; /* oculta um elemento da página*/
+}
+
+audio::-webkit-media-controls-volume-control-container {
+  display: none;
+}
+
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button {
+  display: none;
+}
+
+.entregas {
+  display: flex;
+  justify-content: center; /* Centraliza o texto */
+  align-items: center;
+  position: relative; /* Necessário para posicionar o áudio */
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.entregas h2 {
+  text-align: center;
+  flex-grow: 1; /* Garante que o texto ocupe o espaço central */
+}
+
+.entregas audio {
+  position: absolute;
+  right: 0; /* Posiciona o áudio no lado direito */
+}
+
+/* Logo */
+
+.logo img {
+  height: 80px;
+  width: auto;
+}
+
+/* Barra de Busca */
+
+.search-bar {
+  display: flex;
+  flex-grow: 1; /* Permite que a barra de procura cresça */
+  max-width: 100%; /* tamanho máximo para a search bar*/
+  margin-left: 2%; /* espaço entre a logo e a barra */
+}
+
+.search-bar input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #4b3f2f;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 10px;
+  border: none;
+  background-color: #ede0c7;
+  color: #ffffff(193, 33, 193);
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-bar button i {
+  font-size: 18px;
+}
+
+/* Carrinho */
+
+.cart {
+  color: #342a1f;
+  font-size: 20px;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.cart:hover {
+  color: #d97d54;
+  transition: color 0.2s ease;
+}
+
+p {
+  text-align: justify;
+}
+nav {
+  flex-grow: 1;
+}
+
+nav ul {
+  list-style: none;
+  border-top: 2px solid #4b3f2f; /* Borda somente no topo*/
+  border-bottom: 2px solid #4b3f2f;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* centralizando a nav horizontalmente */
+  align-items: center; /* Ccentralizando os itens verticalmente */
+  height: 100%;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #4b3f2f;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 10px 15px;
+}
+
+nav a:hover {
+  color: #d97d54;
+  transition: color 0.1s ease;
+}
+
+section,
+footer {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1rem;
+}
+
+/* Videozinho */
+
+video,
+audio {
+  display: block;
+  margin: 20px 0;
+}
+
+iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+.aboutus {
+  padding: 2rem; /* Dá espaçamento */
+}
+
+.aboutus h1 {
+  font-size: 2.5rem; /* Ajusta o tamanho como necessáro */
+  color: #4b3f2f;
+  margin-bottom: 0.5rem;
+}
+
+.video-praia {
+  text-align: center;
+}
+
+
+/* Footer */
+
+footer {
+  background-color: #ede0c7;
+  color: #4b3f2f;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slider */
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Move o slide de acordo com o botaozinho*/
+#slide1:checked ~ .slides {
+  transform: translateX(0); /*é usada para mover um elemento ao longo do eixo horizontal.*/
+}
+
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+
+/* Pontos de Navegação so slide */
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.nav-dot {
+  width: 15px;
+  height: 15px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#slide1:checked ~ .navigation label[for="slide1"],  /*navega para slide 1*/
+#slide2:checked ~ .navigation label[for="slide2"] {
+  background-color: #333;
+}
+
+/**/
+/* Seção do produto */
+
+.produtos {
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.produtos h1 {
+  font-size: 2.5rem; 
+  color: #4b3f2f; 
+  margin-bottom: 0.5rem; /* Espaço entre h1 e h2 */
+}
+
+.produtos h2 {
+  font-size: 2rem;
+  color: #4b3f2f;
+  margin-bottom: 2rem;
+}
+
+/* Grade */
+.produto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Card */
+.produto-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.produto-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #f9f9f9;
+  border-radius: 10px 10px 0 0;
+}
+
+.produto-card h3 {
+  font-size: 1.2rem;
+  color: #4b3f2f;
+  margin: 1rem 0 0.5rem;
+}
+
+.produto-card .price {
+  font-size: 1.5rem;
+  color: #f4a261;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.produto-card .installments {
+  color: #4b3f2f;
+  font-size: 1rem;
+}
+
+.produto-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Newsletter */
+
+#newsletter {
+  background-color: #ede0c7; 
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #4b3f2f;
+  border-bottom: 2px solid #4b3f2f;
+  margin-top: 3rem; 
+  margin-bottom: 3rem;
+}
+
+#newsletter h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #4b3f2f;
+  margin-bottom: 1rem;
+}
+
+#newsletter p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #4b3f2f;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  width: 300px;
+  max-width: 100%;
+  border: 2px solid #4b3f2f;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #4b3f2f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #d97d54;
+}
+
+/* Responsividade quando em telas pequenas
+
+Querys são usadas para alterar o estado de algo ou fazer consultas. Neste caso a query permite  que
+dependendo do tipo do dispositivo, seja aplicado um comportamento específico.  
+Ler mais em https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries */
+
+@media screen and (max-width: 768px) {
+  .entregas {
+    flex-direction: row; /* Muda para coluna em telas pequenas */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .entregas audio {
+    position: relative; /* Remove a posição absoluta */
+    margin-top: 1rem; /* Espaço acima do áudio */
+    width: 100%; /* Ajusta a largura do áudio */
+    max-width: 20px; /* Limita a largura máxima do player */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens no começo */
+  }
+
+  .logo {
+    margin-bottom: 1rem; /* Espaço entre logo e nav */
+    width: auto;
+    height: auto;
+    max-height: 80px;
+    max-width: 80%;
+  }
+
+  nav ul {
+    flex-direction: row; /* Coloca os itens numa linha */
+    align-items: center; /* Centraliza os itens */
+    width: 100%; /* Garante que a nav fique com 100% da largura da tela */
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Espaço entre os itens da nav */
+  }
+
+  section {
+    padding: 0.5rem;
+  }
+
+  footer {
+    flex-direction: row;
+    padding: 1rem 2rem;
+    font-size: small;
+  }
+
+  footer p {
+    margin: 0 1rem;
+  }
+
+  .aboutus {
+    padding: 2rem; 
+  }
+
+  .header-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    flex-grow: 1; /* Permite que a barra encolha */
+    max-width: 100%; /* permite que a barra ocupe o espaço disponível */
+    margin-left: 10px; /* ajuste do espaço entre a logo e a barra */
+  }
+  .logo img {
+    height: 40px; /* Rreduz o tamanho em telas menores */
+  }
+
+  .slide img {
+    width: 100%; /* garante que a imagem escale bem */
+    height: auto;
+  }
+
+  .slides {
+    flex-direction: row; /* garante alinhamento del inha entre os slides*/
+  }
+
+  .navigation {
+    bottom: 5px; /* da 5px de distancia do bottom para ficar melhor de ver */
+  }
+
+  .nav-dot {
+    width: 12px;
+    height: 12px; /* seta o tamanho mesmo da bolinha */
+  }
+
+  .cart {
+    font-size: 18px; /* diminui o tamanho do carrinho*/
+    margin-top: 8px; /* ajusta um pouco a margem */
+    margin-bottom: 1rem; /* espaço entre logo e nav */
+    width: auto;
+    height: auto;
+    max-height: 80px;
+    max-width: 80%;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input[type="email"],
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .produtos h1 {
+    font-size: 2rem; /* diminui a fonte para elas menores */
+  }
+
+  .produtos h2 {
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem; /* espaçamento*/
+  }
+
+  @media screen and (max-width: 480px) {
+    .produtos h1 {
+      font-size: 1.8rem; 
+    }
+
+    .produtos h2 {
+      font-size: 1.3rem; 
+      margin-bottom: 1rem; 
+    }
+  }
+}
