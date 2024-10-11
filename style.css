@@ -194,7 +194,7 @@ iframe {
   padding: 2rem; /* Dá espaçamento */
 }
 
-.aboutus h1 {
+.aboutus h2 {
   font-size: 2.5rem; /* Ajusta o tamanho como necessáro */
   color: #4b3f2f;
   margin-bottom: 0.5rem;
@@ -289,13 +289,13 @@ input[type="radio"] {
   text-align: center;
 }
 
-.produtos h1 {
+.produtos h2 {
   font-size: 2.5rem; 
   color: #4b3f2f; 
-  margin-bottom: 0.5rem; /* Espaço entre h1 e h2 */
+  margin-bottom: 0.5rem; /* Espaço entre h2 e h3 */
 }
 
-.produtos h2 {
+.produtos h3 {
   font-size: 2rem;
   color: #4b3f2f;
   margin-bottom: 2rem;
@@ -520,21 +520,21 @@ Ler mais em https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/U
     width: 100%;
   }
 
-  .produtos h1 {
+  .produtos h2 {
     font-size: 2rem; /* diminui a fonte para elas menores */
   }
 
-  .produtos h2 {
+  .produtos h3 {
     font-size: 1.5rem; 
     margin-bottom: 1.5rem; /* espaçamento*/
   }
 
   @media screen and (max-width: 480px) {
-    .produtos h1 {
+    .produtos h2 {
       font-size: 1.8rem; 
     }
 
-    .produtos h2 {
+    .produtos h3 {
       font-size: 1.3rem; 
       margin-bottom: 1rem; 
     }
